@@ -1,25 +1,20 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import HobbyList from '../components/Home/HobbyList';
+import UserList from '../components/Home/UserList';
 import { addNewHobby, setActiveHobby } from '../actions/hobby';
-
-HomePage.propTypes = {};
+import { addNewUser, removeUser } from '../actions/user';
 
 const randomNumber = () => {
   return 1000 + Math.trunc((Math.random() * 9000));
 }
 
 function HomePage() {
-  // strict comparison ===
-  // shallow comparison: {a, b} {a, b}
+
   const hobbyList = useSelector(state => state.hobby.list);
   const activeId = useSelector(state => state.hobby.activeId);
 
-  // const hobbyState = useSelector(state => ({
-  //   list: state.hobby.list,
-  //   activeId: state.hobby.list,
-  // }), shallowEqual);
-
+  const userList = useSelector(state => state.user.list);
 
   const dispatch = useDispatch();
 
@@ -44,8 +39,25 @@ function HomePage() {
     dispatch(action);
   }
 
+  const handleAddUserClick = () => {
+    const newId = randomNumber();
+
+    const newUser = {
+      id: newId,
+      name: `User ${newId}`
+    }
+
+    const action = addNewUser(newUser);
+    dispatch(action);
+  }
+
+  const handleUserClick = (userId) => {
+    const action = removeUser(userId);
+    dispatch(action);
+  }
+
   return (
-    <div className="home-page">
+    <div>
       <h1>REDUX HOOKS - Home Page</h1>
 
       <button onClick={handleAddHobbyClick}>Random hobby</button>
@@ -54,6 +66,13 @@ function HomePage() {
         hobbyList={hobbyList}
         activeId={activeId}
         onHobbyClick={handleHobbyClick}
+      />
+
+      <h2>This is list users</h2>
+      <button onClick={handleAddUserClick}>Add user</button>
+      <UserList
+        userList={userList}
+        onUserClick={handleUserClick}
       />
     </div>
   );
