@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import HobbyList from '../components/Home/HobbyList';
-import UserList from '../components/Home/UserList';
+import HobbyList from '../components/HobbyList';
+import UserList from '../components/UserList';
 import { addNewHobby, setActiveHobby } from '../actions/hobby';
 import { addNewUser, removeUser } from '../actions/user';
 
