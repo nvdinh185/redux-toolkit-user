@@ -18,7 +18,7 @@ function HomePage() {
 
   const dispatch = useDispatch();
 
-  console.log('Hobby list: ', hobbyList, activeId);
+  console.log('Hobby list: ', hobbyList, activeId, userList);
 
   const handleAddHobbyClick = () => {
 
