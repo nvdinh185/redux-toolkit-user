@@ -10,7 +10,7 @@ HobbyList.propTypes = {
 
 HobbyList.defaultProps = {
   hobbyList: [],
-  active: null,
+  activeId: null,
   onHobbyClick: null,
 };
 
