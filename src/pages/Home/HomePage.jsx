@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import UserList from 'components/UserList';
-import { addNewUser, removeUser } from 'app/userSlice';
+import { removeUser } from 'app/userSlice';
+import { Link } from 'react-router-dom';
 
 const randomNumber = () => {
   return 1000 + Math.trunc((Math.random() * 9000));
@@ -15,18 +16,6 @@ function HomePage() {
 
   console.log('Hobby list: ', userList);
 
-  const handleAddUserClick = () => {
-    const newId = randomNumber();
-
-    const newUser = {
-      id: newId,
-      name: `User ${newId}`
-    }
-
-    const action = addNewUser(newUser);
-    dispatch(action);
-  }
-
   const handleUserClick = (userId) => {
     const action = removeUser(userId);
     dispatch(action);
@@ -37,7 +26,7 @@ function HomePage() {
       <h1>REDUX HOOKS - Home Page</h1>
 
       <h2>This is list users</h2>
-      <button onClick={handleAddUserClick}>Add user</button>
+      <Link to="/add">Add user</Link>
       <UserList
         userList={userList}
         onUserClick={handleUserClick}
