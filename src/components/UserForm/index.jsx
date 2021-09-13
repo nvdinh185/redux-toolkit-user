@@ -1,4 +1,4 @@
-import InputField from 'components/custom-fields';
+import InputField from 'components/InputForm';
 import { FastField, Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -7,17 +7,19 @@ import * as Yup from 'yup';
 
 UserForm.propTypes = {
   onSubmit: PropTypes.func,
+  initialValues: PropTypes.object
 };
 
 UserForm.defaultProps = {
   onSubmit: null,
+  initialValues: {}
 }
 
 function UserForm(props) {
   const { initialValues } = props;
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required('This field is required.'),
+    name: Yup.string().required('This field is required.')
   });
 
   return (
@@ -37,12 +39,12 @@ function UserForm(props) {
               name="name"
               component={InputField}
 
-              label="Title"
-              placeholder="Eg: Wow nature ..."
+              label="User"
+              placeholder="Nhập user ..."
             />
 
             <FormGroup>
-              <Button type="submit" color='primary'>OK</Button>
+              <Button type="submit">OK</Button>
             </FormGroup>
           </Form>
         );
