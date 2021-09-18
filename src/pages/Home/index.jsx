@@ -11,7 +11,7 @@ function HomePage() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // console.log('Hobby list: ', userList);
+  // console.log('users list: ', userList);
 
   const handleRemoveUserClick = (userId) => {
     const action = removeUser(userId);

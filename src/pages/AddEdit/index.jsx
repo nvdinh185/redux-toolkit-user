@@ -50,6 +50,7 @@ function AddEditPage() {
 
   return (
     <UserForm
+      isAddMode={isAddMode}
       initialValues={initialValues}
       onSubmit={handleSubmit}
     />
