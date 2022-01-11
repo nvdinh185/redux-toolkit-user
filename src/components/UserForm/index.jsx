@@ -39,10 +39,10 @@ function UserForm(props) {
           <Form>
             <FastField
               name="name"
-              component={InputField}
-
               label="User"
+
               placeholder="Nhập user ..."
+              component={InputField}
             />
 
             <FormGroup>

@@ -4,47 +4,34 @@ import React from 'react';
 import { FormFeedback, FormGroup, Input, Label } from 'reactstrap';
 
 InputField.propTypes = {
-  field: PropTypes.object.isRequired,
-  form: PropTypes.object.isRequired,
-
-  type: PropTypes.string,
-  label: PropTypes.string,
-  placeholder: PropTypes.string,
-  disabled: PropTypes.bool,
+  // name: PropTypes.string,
+  // label: PropTypes.string,
+  // placeholder: PropTypes.string,
+  // component: PropTypes.bool,
 };
 
 InputField.defaultProps = {
-  type: 'text',
-  label: '',
-  placeholder: '',
-  disabled: false,
+  // name: 'text',
+  // label: '',
+  // placeholder: '',
+  // component: false,
 };
 
 function InputField(props) {
-  const {
-    field, form,
-    type, label, placeholder, disabled
-  } = props;
-  const { name } = field;
-  const { errors, touched } = form;
-  const showError = errors[name] && touched[name];
+  const { field, label, placeholder } = props;
+  // console.log(props);
 
   return (
     <FormGroup>
-      {label && <Label for={name}>{label}</Label>}
+      {label && <Label>{label}</Label>}
 
       <Input
-        id={name}
         {...field}
 
-        type={type}
-        disabled={disabled}
         placeholder={placeholder}
-
-        invalid={showError}
       />
 
-      <ErrorMessage name={name} component={FormFeedback} />
+      <ErrorMessage name={"name"} component={FormFeedback} />
     </FormGroup>
   );
 }
