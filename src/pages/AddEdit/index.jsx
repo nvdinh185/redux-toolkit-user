@@ -1,8 +1,8 @@
-import { addNewUser, updateUser } from 'app/userSlice';
-import UserForm from 'components/UserForm';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import { addNewUser, updateUser } from 'app/userSlice';
+import UserForm from 'components/UserForm';
 
 AddEditPage.propTypes = {};
 
@@ -26,7 +26,6 @@ function AddEditPage() {
   } : userEdited;
 
   const handleSubmit = (values) => {
-    // return new Promise(resolve => {
     console.log('Form submit: ', values);
 
     setTimeout(() => {
@@ -43,9 +42,7 @@ function AddEditPage() {
         dispatch(action);
       }
       history.push('/users');
-      // resolve(true);
     }, 1000);
-    // });
   }
 
   return (

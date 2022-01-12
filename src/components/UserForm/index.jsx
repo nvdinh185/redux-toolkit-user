@@ -7,14 +7,14 @@ import * as Yup from 'yup';
 
 UserForm.propTypes = {
   isAddMode: PropTypes.bool,
+  initialValues: PropTypes.object,
   onSubmit: PropTypes.func,
-  initialValues: PropTypes.object
 };
 
 UserForm.defaultProps = {
   isAddMode: true,
+  initialValues: {},
   onSubmit: null,
-  initialValues: {}
 }
 
 function UserForm(props) {
