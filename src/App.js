@@ -1,9 +1,9 @@
-import 'App.css';
+import React, { Suspense } from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+
 import NotFound from 'components/NotFound';
 import AddEditPage from 'pages/AddEdit';
 import HomePage from 'pages/Home';
-import React, { Suspense } from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (

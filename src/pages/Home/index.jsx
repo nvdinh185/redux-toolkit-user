@@ -1,6 +1,6 @@
+import React from 'react';
 import { removeUser } from 'app/userSlice';
 import UserList from 'components/UserList';
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ function HomePage() {
 
   return (
     <div>
-      <h1>REDUX HOOKS - Home Page</h1>
+      <h1>Redux Toolkit - Home Page</h1>
 
       <h2>This is list users</h2>
       <Link to="/add">Add user</Link>
