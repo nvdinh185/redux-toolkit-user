@@ -4,8 +4,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import { addNewUser, updateUser } from 'app/userSlice';
 import UserForm from 'components/UserForm';
 
-AddEditPage.propTypes = {};
-
 /*
 Tạo một số ngẫu nhiên trong khoảng từ 2 đến 99
 */

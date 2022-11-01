@@ -1,24 +1,11 @@
-import InputField from 'components/InputForm';
-import { FastField, Form, Formik } from 'formik';
-import PropTypes from 'prop-types';
 import React from 'react';
+import { FastField, Form, Formik } from 'formik';
 import { Button, FormGroup } from 'reactstrap';
 import * as Yup from 'yup';
-
-UserForm.propTypes = {
-  isAddMode: PropTypes.bool,
-  initialValues: PropTypes.object,
-  onSubmit: PropTypes.func,
-};
-
-UserForm.defaultProps = {
-  isAddMode: true,
-  initialValues: {},
-  onSubmit: null,
-}
+import InputField from 'components/InputForm';
 
 function UserForm(props) {
-  const { initialValues, isAddMode } = props;
+  const { initialValues, isAddMode, onSubmit } = props;
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('This field is required.').min(5, 'Must have at least 5 characters.')
@@ -28,7 +15,7 @@ function UserForm(props) {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={props.onSubmit}
+      onSubmit={onSubmit}
     >
       {formikProps => {
         // do something here ...

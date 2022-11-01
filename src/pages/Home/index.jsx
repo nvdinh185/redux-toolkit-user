@@ -1,8 +1,8 @@
 import React from 'react';
-import { removeUser } from 'app/userSlice';
-import UserList from 'components/UserList';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import { removeUser } from 'app/userSlice';
+import UserList from 'components/UserList';
 
 function HomePage() {
 

@@ -1,18 +1,5 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import './UserList.css';
-
-UserList.propTypes = {
-    UserList: PropTypes.array,
-    onEditUserClick: PropTypes.func,
-    onRemoveUserClick: PropTypes.func
-};
-
-UserList.defaultProps = {
-    UserList: [],
-    onEditUserClick: null,
-    onRemoveUserClick: null
-};
 
 function UserList(props) {
     const { userList, onEditUserClick, onRemoveUserClick } = props;
