@@ -1,5 +1,5 @@
-import { ErrorMessage } from 'formik';
 import React from 'react';
+import { ErrorMessage } from 'formik';
 import { FormFeedback, FormGroup, Input, Label } from 'reactstrap';
 
 function InputField(props) {

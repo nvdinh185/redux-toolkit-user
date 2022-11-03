@@ -18,7 +18,6 @@ function UserForm(props) {
       onSubmit={onSubmit}
     >
       {formikProps => {
-        // do something here ...
         const { values, errors, touched, isSubmitting } = formikProps;
         console.log({ values, errors, touched, isSubmitting });
 
