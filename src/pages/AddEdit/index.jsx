@@ -35,7 +35,6 @@ function AddEditPage() {
         const action = addNewUser(newUser);
         dispatch(action);
       } else {
-        // Do something here
         const action = updateUser(values);
         dispatch(action);
       }
